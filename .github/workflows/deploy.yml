@@ -1,3 +1,7 @@
+
+Paste the following content:
+
+```yaml
 name: Deploy to S3
 
 on:
@@ -8,8 +12,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Sync files to S3
