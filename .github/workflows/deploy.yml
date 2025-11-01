@@ -1,19 +1,19 @@
-name: Deploy Website to S3
+name: Deploy to S3
 
 on:
   push:
     branches:
-      - main  # or master if you use master branch
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Sync S3 bucket
-        uses: jakejarvis/s3-sync-action@master
+      - name: Sync files to S3
+        uses: jakejarvis/s3-sync-action@v0.5.1
         with:
           args: --delete
         env:
